@@ -1,5 +1,5 @@
 import React from 'react';
-import Articles from '../components/article';
+import Friends from '../components/friend';
 import axios from 'axios';
 const listData = [];
 for (let i = 0; i < 23; i++) {
@@ -14,15 +14,15 @@ for (let i = 0; i < 23; i++) {
   });
 }
 
-class ArticleList extends React.Component{
+class FriendList extends React.Component{
     state = {
-        articles: []
+        friends: []
     }
     componentDidMount(){
-        axios.get( 'http://127.0.0.1:8000/articles-api/')
+        axios.get( 'http://127.0.0.1:8000/friends-api/')
             .then(res =>{
                 this.setState({
-                    articles: res.data
+                    friends: res.data
                 });
             }
 
@@ -30,9 +30,9 @@ class ArticleList extends React.Component{
     }
     render(){
         return(
-            <Articles data={this.state.articles}/>
+            <Friends data={this.state.friends}/>
         )
     }
 }
 
-export default ArticleList
+export default FriendList;
