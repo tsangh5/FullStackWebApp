@@ -1,6 +1,8 @@
 import React from 'react';
 import Articles from '../components/article';
 import axios from 'axios';
+import Form from '../components/ArticleForm';
+
 const listData = [];
 for (let i = 0; i < 23; i++) {
   listData.push({
@@ -28,9 +30,13 @@ class ArticleList extends React.Component{
 
             )
     }
-    render(){
-        return(
+    render(){ return(
+        <div>
             <Articles data={this.state.articles}/>
+            <br></br>
+            <h2>Create an article</h2>
+            <Form/>
+        </div>
         )
     }
 }
