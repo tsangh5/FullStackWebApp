@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 class Form extends React.Component{
-    handleSubmitForm = (event, requestType, articleID) => {
+    handleSubmitForm =  async (event, requestType, articleID) => {
         const title = event.target.Title.value;
         const content= event.target.Content.value;
 

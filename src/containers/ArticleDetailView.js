@@ -25,6 +25,7 @@ class ArticleDetail extends React.Component{
                 this.setState({
                     article: res.data
     });
+    this.props.history.push('/')
 }
             )
 }
@@ -35,9 +36,11 @@ class ArticleDetail extends React.Component{
                 <p>{this.state.article.content}</p>
                 </Card>
                 <Form requestType='put' articleID={this.props.match.params.articleID} btnText='update'/>
+                <label id='delete'>Delete</label>
                 <form>
-                    <input type='submit' onSubmit={this.delete}>Delete</input>
+                    <input id='delete' type='submit' onSubmit={this.delete} />
                 </form>
+
             </div>
             
         )
